@@ -6,6 +6,7 @@ import Location from "./location/Location"
 import "./animal/Animal.css"
 import "./employee/Employee.css"
 import "./customer/Customer.css"
+import "./location/Location.css"
 
 export default () => (
     <>
@@ -30,7 +31,7 @@ export default () => (
             <Employee />
             <Employee />
         </article>
-        
+
         <h2>Locations</h2>
         <article className="locations">
             <Location />
