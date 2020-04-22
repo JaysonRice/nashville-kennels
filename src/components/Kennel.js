@@ -3,6 +3,7 @@ import LocationList from "./location/LocationList"
 import EmployeeList from "./employee/EmployeeList"
 import CustomerList from "./customer/CustomerList"
 import AnimalList from "./animal/AnimalList"
+import "./Kennel.css"
 import "./animal/Animal.css"
 import "./employee/Employee.css"
 import "./customer/Customer.css"
@@ -34,7 +35,9 @@ export default () => (
 
         <h2>Employees</h2>
             <EmployeeProvider>
-                <EmployeeList />
+                <LocationProvider>
+                    <EmployeeList />
+                </LocationProvider>
             </EmployeeProvider>
 
         <h2>Locations</h2>
