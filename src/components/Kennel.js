@@ -1,53 +1,12 @@
-import React from "react"
-import LocationList from "./location/LocationList"
-import EmployeeList from "./employee/EmployeeList"
-import CustomerList from "./customer/CustomerList"
-import AnimalList from "./animal/AnimalList"
-import "./Kennel.css"
-import "./animal/Animal.css"
-import "./employee/Employee.css"
-import "./customer/Customer.css"
-import "./location/Location.css"
-import { LocationProvider } from "./location/LocationProvider"
-import { EmployeeProvider } from "./employee/EmployeeProvider"
-import { CustomerProvider } from "./customer/CustomerProvider"
-import { AnimalProvider } from "./animal/AnimalProvider"
+import React, { useState } from "react"
+import Dashboard from "./Dashboard"
+import Auth from "./auth/Auth"
 
+export default () => {
+    const [check, update] = useState(false)
+    const toggle = () => update(!check)
 
-export default () => (
-    <>
-        <h2>Nashville Kennels</h2>
-        <small>Loving care when you're not there.</small>
-
-        <address>
-            <div>Visit Us at the Nashville North Location</div>
-            <div>500 Puppy Way</div>
-        </address>
-
-        <h2>Animals</h2>
-            <AnimalProvider>
-                <LocationProvider>
-                    <CustomerProvider>
-                        <AnimalList />
-                    </CustomerProvider>
-                </LocationProvider>
-            </AnimalProvider>
-
-        <h2>Employees</h2>
-            <EmployeeProvider>
-                <LocationProvider>
-                    <EmployeeList />
-                </LocationProvider>
-            </EmployeeProvider>
-
-        <h2>Locations</h2>
-            <LocationProvider>
-                <LocationList />
-            </LocationProvider>
-
-        <h2>Customers</h2>
-            <CustomerProvider>
-                <CustomerList />
-            </CustomerProvider>
-    </>
-)
+    return (
+        localStorage.getItem("kennel_customer") ? <Dashboard /> : <Auth toggle={toggle} />
+    )
+}
