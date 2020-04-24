@@ -5,8 +5,6 @@ import "./Login.css"
 const Login = props => {
     const email = useRef()
     const password = useRef()
-    const customerName = useRef()
-    const address = useRef()
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/customers?email=${email.current.value}`)

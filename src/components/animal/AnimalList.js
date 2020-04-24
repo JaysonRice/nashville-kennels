@@ -19,7 +19,7 @@ export default () => {
 
     return (
         <>
-        <Button onClick={() => {
+        <Button color="primary" onClick={() => {
             // check if the user is authenticated
             const userId = localStorage.getItem("kennel_customer")
             if(userId){
