@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import { EmployeeContext } from "./EmployeeProvider"
 import Employee from "./Employee"
 import { LocationContext } from "../location/LocationProvider"
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
+import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import EmployeeForm from "./EmployeeForm"
 
 export default () => {
@@ -14,7 +14,7 @@ export default () => {
 
     return (
         <>
-            <div className="fakeLink href" onClick={toggle}>Add New Employee</div>
+            <Button color="primary" onClick={toggle}>Add New Employee</Button>
 
             <ul className="employees">
                 {
