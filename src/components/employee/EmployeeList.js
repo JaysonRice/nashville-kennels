@@ -4,6 +4,7 @@ import Employee from "./Employee"
 import { LocationContext } from "../location/LocationProvider"
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import EmployeeForm from "./EmployeeForm"
+import { EditEmployeeForm } from "./EditEmployeeForm"
 
 export default () => {
     const { employees } = useContext(EmployeeContext)
@@ -12,6 +13,8 @@ export default () => {
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
 
+    const [editModal, setEditModal] = useState(false)
+    const toggleEdit = () => setEditModal(!editModal);
     return (
         <>
             <Button color="primary" onClick={toggle}>Add New Employee</Button>
@@ -34,6 +37,14 @@ export default () => {
                     <EmployeeForm toggler={toggle} />
                 </ModalBody>
             </Modal>
+            < Modal isOpen={editModal} toggle={toggleEdit}>
+                <ModalHeader toggle={toggleEdit}>
+                    {employees.name}
+                </ModalHeader>
+                <ModalBody>
+                    <EditEmployeeForm key={employees.id} toggleEdit={toggleEdit} {...employees} />
+                </ModalBody>
+            </Modal >
         </>
     )
 }
