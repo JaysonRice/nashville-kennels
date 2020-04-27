@@ -10,3 +10,7 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+
+.matchedAnimals {
+    margin:0 1rem .5rem 1rem;
+  }

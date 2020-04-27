@@ -1,4 +1,5 @@
 import React, { useRef } from "react"
+import AddAnimalButon from "../animal/AddAnimalButton"
 
 export const SearchBar = ({ setTerms }) => {
 
@@ -16,6 +17,7 @@ export const SearchBar = ({ setTerms }) => {
                     className="form-control"
                 />
             </div>
+        <AddAnimalButon />
         </fieldset>
     )
 }

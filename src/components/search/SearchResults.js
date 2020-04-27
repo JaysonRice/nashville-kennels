@@ -43,7 +43,7 @@ export const SearchResults = ({ searchTerms }) => {
             <div className="animals">
                 {
                     filteredAnimals.map(animal => <div
-                        className="fakeLink href"
+                        className="fakeLink href matchedAnimals"
                         onClick={() => {
                             const location = locations.find(l => l.id === animal.locationId)
                             const customer = customers.find(c => c.id === animal.customerId)
