@@ -37,10 +37,6 @@ export const CustomerProvider = (props) => {
         getCustomers()
     }, [])
 
-    useEffect(() => {
-        console.log("****  CUSTOMERS APPLICATION STATE CHANGED  ****")
-    }, [customers])
-
     return (
         <CustomerContext.Provider value={{
             customers, addCustomer
