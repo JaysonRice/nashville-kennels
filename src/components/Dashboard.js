@@ -10,6 +10,7 @@ import { SearchBar } from "./search/SearchBar"
 import { SearchResults } from "./search/SearchResults"
 import "./Layout.css"
 import "./Kennel.css"
+import Cloudinary from "./Cloudinary"
 
 export default () => {
     const [searchTerms, setTerms] = useState(null)
@@ -61,6 +62,7 @@ export default () => {
                         <LocationProvider>
                             <SearchBar setTerms={setTerms} />
                             <SearchResults searchTerms={searchTerms} />
+                            <Cloudinary />
                         </LocationProvider>
                     </CustomerProvider>
                 </AnimalProvider>
